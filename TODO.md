@@ -13,13 +13,13 @@
 - [x] Validar códigos de moeda digitados pelo usuário
 - [ ] Exibir cotação atual junto com o valor convertido
 - [x] Listar moedas suportadas (buscar via API ou arquivo JSON local)
-- [ ] Melhorar mensagens de erro da API e entrada inválida
+- [x] Melhorar mensagens de erro da API e entrada inválida
 - [ ] Salvar histórico de conversões em arquivo JSON
 
 ---
 
 ## 📌 Funcionalidades Futuras
-- [ ] Criar versão com interface gráfica (Tkinter ou PySimpleGUI)
+- [x] Criar versão com interface gráfica (Tkinter ou PySimpleGUI)
 - [ ] Criar versão web usando Flask ou Django
 - [ ] Adicionar testes unitários (pytest)
 - [ ] Fazer deploy da versão web no Render ou Streamlit Cloud
