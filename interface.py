@@ -9,7 +9,8 @@ class ConversorMoedasApp(ctk.CTk):
         self.geometry("400x350")
         self.conversor = ConversorMoedas()
 
-        self.resultado_label = None
+        self.title_label = None
+        self.result_label = None
         self.botao_converter = None
         self.combo_para = None
         self.combo_de = None
@@ -19,8 +20,11 @@ class ConversorMoedasApp(ctk.CTk):
         self.criar_widgets()
 
     def criar_widgets(self):
+        self.title_label = ctk.CTkLabel(self, text="Meu Incrível Conversor", font=("Arial", 20))
+        self.title_label.pack(pady=15)
+
         self.entrada_valor = ctk.CTkEntry(self, placeholder_text="Valor", width=200)
-        self.entrada_valor.pack(pady=20)
+        self.entrada_valor.pack(pady=15)
 
         self.combo_de = ctk.CTkComboBox(self, values=self.lista_moedas, width=200)
         self.combo_de.pack(pady=10)
@@ -33,8 +37,8 @@ class ConversorMoedasApp(ctk.CTk):
         self.botao_converter = ctk.CTkButton(self, text="Converter", command=self.converter, width=200)
         self.botao_converter.pack(pady=15)
 
-        self.resultado_label = ctk.CTkLabel(self, text="")
-        self.resultado_label.pack()
+        self.result_label = ctk.CTkLabel(self, text="")
+        self.result_label.pack()
 
     def converter(self):
         try:
@@ -44,6 +48,6 @@ class ConversorMoedasApp(ctk.CTk):
             moeda_final = self.combo_para.get()
 
             resultado = self.conversor.converter_moeda(valor, moeda_base, moeda_final)
-            self.resultado_label.configure(text=resultado)
+            self.result_label.configure(text=resultado)
         except ValueError:
-            self.resultado_label.configure(text="Insira um valor válido")
+            self.result_label.configure(text="Insira um valor válido")
